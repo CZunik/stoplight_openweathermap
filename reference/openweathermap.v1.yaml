@@ -390,18 +390,18 @@ components:
         - cod
         - message
     response_not_found:
-      description: ''
+      description: response not found
       type: object
       properties:
         cod:
-          type: string
-          minLength: 1
+          type: integer
         message:
           type: string
           minLength: 1
       required:
         - cod
         - message
+      title: '404'
   securitySchemes:
     app_id:
       name: appid
