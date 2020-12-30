@@ -292,6 +292,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/unauthorized_response'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response_not_found'
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
       parameters:
@@ -380,6 +386,19 @@ components:
           type: integer
         message:
           type: string
+      required:
+        - cod
+        - message
+    response_not_found:
+      description: ''
+      type: object
+      properties:
+        cod:
+          type: string
+          minLength: 1
+        message:
+          type: string
+          minLength: 1
       required:
         - cod
         - message
